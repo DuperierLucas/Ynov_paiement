@@ -8,3 +8,7 @@ installer stripe grâce à gem : gem install stripe -->
 npm init
 
 npm install express ejs stripe
+
+npm install dotenv
+
+Run : node .\server.js
