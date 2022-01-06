@@ -1,0 +1,34 @@
+{
+    "icecreams": [
+        {
+            "id": 1,
+            "name": "Glace au chocolat",
+            "price": 999,
+            "imgName": "chocolate_ice.png"
+        },
+        {
+            "id": 2,
+            "name": "Glace à la vanille",
+            "price": 1099,
+            "imgName": "vanilla_ice.png"
+        },        
+        {
+            "id": 3,
+            "name": "Glace au citron vert",
+            "price": 1150,
+            "imgName": "lemon_lime_ice.png"
+        },
+        {
+            "id": 4,
+            "name": "Glace aux fruits rouge",
+            "price": 1299,
+            "imgName": "strawberry-ice.png"
+        },
+        {
+            "id": 5,
+            "name": "Glace à la pistache",
+            "price": 1399,
+            "imgName": "pistachio_ice.png"
+        }
+    ]
+}

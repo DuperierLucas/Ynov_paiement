@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ice creams</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="main.css" />
+        <script src="https://checkout.stripe.com/checkout.js" defer></script>
+        <script>
+            var stripePublicKey = '<%= stripePublicKey %>'
+        </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <script src="ice.js" defer></script>
+    </head>
+    <body>
+        <section class="container content-section">
+            <h2 class="section-header">ICE CREAM</h2>
+            <a href="/"><- Retour page accueil</a>
+            <div class="shop-items">
+                <% items.icecreams.forEach(function(item){ %>
+                    <div class="shop-item" data-item-id="<%= item.id %>">
+                        <span class="shop-item-title"><%= item.name %></span>
+                        <img class="shop-item-image" src="Images/<%= item.imgName %>">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price"><%= item.price / 100 %> €</span>
+                            <button class="btn btn-primary shop-item-button" type="button">Ajouter au panier</button>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">Panier</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRIX</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITÉ</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">0 €</span>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary btn-purchase" type="button">Commander</button>
+            </div>
+        </section> 
+    </body>
+</html>
