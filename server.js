@@ -27,34 +27,48 @@ app.get('/ice', function(req, res) {
   })
 })
 
-/* app.post('/purchase', function(req, res) {
-  fs.readFile('items.json', function(error, data) {
+app.post('/create-checkout-session', async(req, res) => {
+  const itemsJson = "";
+  const itemsArray = "";
+  let total = 0;
+
+/*fs.readFile('items.json', function(error, data) {
     if (error) {
       res.status(500).end()
     } else {
-      const itemsJson = JSON.parse(data)
-      const itemsArray = itemsJson.music.concat(itemsJson.icecreams)
-      let total = 0
+      itemsJson = JSON.parse(data)
+      itemsArray = itemsJson.music.concat(itemsJson.icecreams)
+      total = 0
       req.body.items.forEach(function(item) {
         const itemJson = itemsArray.find(function(i) {
           return i.id == item.id
         })
         total = total + itemJson.price * item.quantity
       })
-
-      stripe.charges.create({
-        amount: total,
-        source: req.body.stripeTokenId,
-        currency: 'usd'
-      }).then(function() {
-        console.log('Charge Successful')
-        res.json({ message: 'Successfully purchased items' })
-      }).catch(function() {
-        console.log('Charge Fail')
-        res.status(500).end()
-      })
     }
-  })
-}) */
+  }) */
 
-app.listen(3000)
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'Ice cream',
+          },
+          unit_amount: total,
+        },
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: 'https://example.com/success',
+    cancel_url: 'https://example.com/cancel'
+  })
+
+  console.log(session)
+
+  res.redirect(303, session.url);
+})
+
+app.listen(4242, () => console.log(`Listening on port ${4242}!`));

@@ -22,11 +22,9 @@ function ready() {
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
-
-    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
-var stripeHandler = StripeCheckout.configure({
+/* var stripeHandler = StripeCheckout.configure({
     key: stripePublicKey,
     locale: 'en',
     token: function(token) {
@@ -67,16 +65,16 @@ var stripeHandler = StripeCheckout.configure({
             console.error(error)
         })
     }
-})
+}) */
 
-function purchaseClicked() {
+/* function purchaseClicked() {
     var priceElement = document.getElementsByClassName('cart-total-price')[0]
     var price = parseFloat(priceElement.innerText.replace('€', '')) * 100
     stripeHandler.open({
         amount: price
     })
 }
-
+ */
 function removeCartItem(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()

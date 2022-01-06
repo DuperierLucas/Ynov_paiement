@@ -45,7 +45,9 @@
                 <span class="cart-total-price">0 €</span>
             </div>
             <div class="text-center">
-                <button class="btn btn-primary btn-purchase" type="button">Commander</button>
+                <form action="/create-checkout-session" method="POST">
+                    <button class="btn btn-success" type="submit">Checkout</button>
+                </form>
             </div>
         </section> 
     </body>
