@@ -1,0 +1,24 @@
+{
+  "name": "ynov_paiement",
+  "version": "1.0.0",
+  "description": "récupérer et installer ruby : https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.0.3-1/rubyinstaller-devkit-3.0.3-1-x64.exe\r télécharger et unzip gem : https://rubygems.org/rubygems/rubygems-3.3.4.zip",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DuperierLucas/Ynov_paiement.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DuperierLucas/Ynov_paiement/issues"
+  },
+  "homepage": "https://github.com/DuperierLucas/Ynov_paiement#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "stripe": "^8.195.0"
+  }
+}
