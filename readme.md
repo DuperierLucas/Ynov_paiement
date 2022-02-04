@@ -1,4 +1,4 @@
-# Site web de vente de glace en ligne (Strip)
+# Site web de vente de glace en ligne (Stripe)
 ### Développé par Lucas DUPERIER et Emma TARFI
 ###
 ## Setup
