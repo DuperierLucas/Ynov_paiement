@@ -3,6 +3,8 @@
 ###
 ## Setup
 
+Lancer les commandes suivantes à l'ouverture du projet : 
+
 npm init
 
 npm install express ejs stripe
